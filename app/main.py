@@ -18,11 +18,17 @@ def index():
     return render_template('form.html')
 
 @app.route('/submit', methods=['POST'])
-def submit():
+
     email = request.form.get('email')
     scam_type = request.form.get('scam_type')
     message = request.form.get('message')
     file = request.files.get('evidence')
+def submit():
+    from flask import send_from_directory
+
+@app.route('/reports/<path:filename>')
+def serve_report(filename):
+    return send_from_directory('reports', filename)
 
     filename = None
     if file and allowed_file(file.filename):
