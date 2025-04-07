@@ -35,17 +35,19 @@ def submit():
         return "Invalid file type.", 400
 
     report_path = generate_report(email, scam_type, message, filename)
-    
-    return f"""<div style='font-family: Arial; padding: 20px;">
- <h2>✅ Scan Complete</h2>
- <p><strong>Scam Type:</strong> {scam_type}</p>
- <p><strong>Message:</strong> {message}</p>
- <p><strong>Evidence Uploaded:</strong> {filename}</p>
- <br>
- <a href='/{report_path}' target='_blank'>📄 Download Full PDF Report</a>
- </div>"""
+
+    return f"""
+<div style='font-family: Arial; padding: 20px;'>
+  <h2>✅ Scan Complete</h2>
+  <p><strong>Scam Type:</strong> {scam_type}</p>
+  <p><strong>Message:</strong> {message}</p>
+  <p><strong>Evidence Uploaded:</strong> {filename}</p>
+  <br>
+  <a href='/{report_path}' target='_blank'>📄 Download Full PDF Report</a>
+</div>
+"""
+
 if __name__ == '__main__':
     import os
-port = int(os.environ.get("PORT", 5000))
-app.run(host="0.0.0.0", port=port)
-
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
