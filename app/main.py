@@ -43,7 +43,7 @@ def submit():
  <p><strong>Evidence Uploaded:</strong> {filename}</p>
  <br>
  <a href='/{report_path}' target='_blank'>📄 Download Full PDF Report</a>
-</div>"""
+ </div>"""
 if __name__ == '__main__':
     import os
 port = int(os.environ.get("PORT", 5000))
