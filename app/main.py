@@ -35,9 +35,8 @@ def submit():
         return "Invalid file type.", 400
 
     report_path = generate_report(email, scam_type, message, filename)
-
-   return f"""
-<div style='font-family: Arial; padding: 20px;'>
+   return f""" 
+    <div style='font-family: Arial; padding: 20px;'>
     <h2>✅ Scan Complete</h2>
     <p><strong>Scam Type:</strong> {scam_type}</p>
     <p><strong>Message:</strong> {message}</p>
